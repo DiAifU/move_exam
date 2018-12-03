@@ -5,7 +5,7 @@
       <geometry>
         <mesh filename="package://move_printer/urdf/printer.dae"/>
       </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
-    <origin rpy="0.0 0 0" xyz="0 0 0"/>
   </link>
 </robot>
