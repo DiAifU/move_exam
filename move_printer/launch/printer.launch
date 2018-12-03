@@ -1,0 +1,9 @@
+<launch>
+
+  <node name="extruder" pkg="move_printer" type="extruder.py">
+    
+	<rosparam command="load" file="$(find move_printer)/config/plastic.yaml"/>
+
+  </node>
+  
+</launch>
