@@ -83,3 +83,19 @@ In order to have the extruder to move on the 3 axis, we have to add two virtual 
 ```base_link --> extruder_link_virt1 --> extruder_link_virt2 --> extruder_link```
 - Set the axis and limits of the links as follows :
 ![Fixed printer order](https://github.com/DiAifU/move_exam/raw/master/screenshots/urdf_extruder_complete.png)
+
+### Now create the MoveIt! package for the robot
+- First rename ```printer.urdf``` to ```printer.urdf.xacro``` in order to avoid parsing problems in MoveIt! (think about updating rviz.launch).
+- Run ```roslaunch moveit_setup_assistant setup_assistant.launch```
+- Load the urdf in the first window
+- When loaded, go to the Self Collision Matrix tab and generate it automatically
+  - Go to the Planning Group tab and create a group composed of all the joints and named ```printer_group```
+  - In Robot Poses tab, add the ```init_pose``` and set all the angles to 0
+  - In End Effectors tab, add the effector called ```extruder``` in group ```printer_group``` and set the parent_link to ```extruder_link```
+  - Generate the package and save it in a folder named ```move_printer_moveit```
+
+### You can now start testing MoveIt! by running the ```demo.launch``` in your created MoveIt! package.
+- ```catkin_make``` your workspace
+- Source it
+- ```roslaunch move_printer_moveit demo.launch```
+![MoveIt](https://github.com/DiAifU/move_exam/raw/master/screenshots/moveit.gif)

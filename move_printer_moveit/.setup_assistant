@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: move_printer
+    relative_path: urdf/printer.urdf.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/printer.srdf
+  CONFIG:
+    author_name: Nicolas Montvernay
+    author_email: nicolas.montvernay@gmail.com
+    generated_timestamp: 1543859786
