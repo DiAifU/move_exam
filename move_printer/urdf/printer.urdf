@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
-<robot name="printer">
+<robot name="printer" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:property name="plate_height" value="0.025" />
+  <xacro:property name="plate_length" value="0.25" />
+  <xacro:property name="extruder_radius" value="0.01" />
+  <xacro:property name="extruder_length" value="0.05" />
   <link name="base_link">
     <visual>
       <geometry>
@@ -8,4 +12,19 @@
       <origin rpy="${-pi/2} 0 0" xyz="0 0 0"/>
     </visual>
   </link>
+  <link name="extruder_link">
+    <visual>
+      <geometry>
+        <cylinder radius="${extruder_radius}" length="${extruder_length}"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 ${extruder_length/2}"/>
+    </visual>
+  </link>
+
+  <joint name="joint1" type="prismatic">
+    <parent link="base_link"/>
+    <child link="extruder_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.35"/>
+    <limit lower="${-plate_length/2}" upper="${plate_length/2}" effort="1000.0" velocity="0.1" />
+  </joint>
 </robot>
