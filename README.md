@@ -20,13 +20,13 @@ by
 
 #### At that point, you should have RVIZ running with the printer model loaded correctly with a wrong orientation
 
-![RVIZ running with config](https://github.com/DiAifU/move_exam/screenshots/rviz_config.png)
+![RVIZ running with config](https://github.com/DiAifU/move_exam/raw/master/screenshots/rviz_config.png)
 
 ## Modify URDF
 
 We are now going to turn the printer in the right direction. Let's put pi/2 in roll. We now have that result:
 
-![Fixed printer order](https://github.com/DiAifU/move_exam/screenshots/printer_roll_modified.png)
+![Fixed printer order](https://github.com/DiAifU/move_exam/raw/master/screenshots/printer_roll_modified.png)
 
 ### We now want to add the extruder
 
@@ -72,9 +72,9 @@ by
 ```
 We're not specifying it here but by default if the ```<axis>``` tag is not defined, it assumes that the axis for this joint is the x axis. So we make sure to set the lower and upper limit to half of the plate length
 - Let's save the file and run rviz again. Here is what we have :
-![Model with extruder](https://github.com/DiAifU/move_exam/screenshots/extruder.png)
+![Model with extruder](https://github.com/DiAifU/move_exam/raw/master/screenshots/extruder.png)
 We can also move the extruder along the x axis:
-![Model with extruder](https://github.com/DiAifU/move_exam/screenshots/extruder_x.png)
+![Model with extruder](https://github.com/DiAifU/move_exam/raw/master/screenshots/extruder_x.png)
 
 ### Here is the tricky part
 
@@ -82,4 +82,4 @@ In order to have the extruder to move on the 3 axis, we have to add two virtual 
 - First create twos links ```extruder_link_virt1``` and ```extruder_link_virt2``` and then create the joints in this order :
 ```base_link --> extruder_link_virt1 --> extruder_link_virt2 --> extruder_link```
 - Set the axis and limits of the links as follows :
-![Fixed printer order](https://github.com/DiAifU/move_exam/screenshots/urdf_extruder_complete.png)
+![Fixed printer order](https://github.com/DiAifU/move_exam/raw/master/screenshots/urdf_extruder_complete.png)
