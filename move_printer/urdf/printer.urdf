@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot name="printer">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://move_printer/urdf/printer.dae"/>
+      </geometry>
+    </visual>
+    <origin rpy="0.0 0 0" xyz="0 0 0"/>
+  </link>
+</robot>
