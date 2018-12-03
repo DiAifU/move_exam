@@ -18,3 +18,9 @@
 #### At that point, you should have RVIZ running with the printer model loaded correctly with a wrong orientation
 
 ![RVIZ running with config](screenshots/rviz_config.png)
+
+## Modify URDF
+
+We are now going to turn the printer in the right direction. Let's put pi/2 in roll. We now have that result:
+
+![Fixed printer order](screenshots/printer_roll_modified.png)
