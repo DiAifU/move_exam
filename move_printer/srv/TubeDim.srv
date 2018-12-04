@@ -1,0 +1,4 @@
+float32 diameter
+float32 height
+---
+bool finished

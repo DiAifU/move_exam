@@ -1,9 +1,9 @@
 <launch>
-
+  <include file="$(find move_printer_moveit)/launch/demo.launch"/>
   <node name="extruder" pkg="move_printer" type="extruder.py">
-    
 	<rosparam command="load" file="$(find move_printer)/config/plastic.yaml"/>
-
   </node>
-  
+
+  <node name="print_tube_moveit" pkg="move_printer" type="print_tube_moveit.py"/>
+
 </launch>
