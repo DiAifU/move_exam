@@ -100,7 +100,7 @@ In order to have the extruder to move on the 3 axis, we have to add two virtual 
 - ```roslaunch move_printer_moveit demo.launch```
 ![MoveIt](https://github.com/DiAifU/move_exam/raw/master/screenshots/moveit.gif)
 
-## Create move_printer_moveit node:
+## Create print_tube_moveit node:
 
 We first start by creating the python file (don't forget to ``` $ chmod +x <your_file.py> ```)
 Now we have to create a set of waypoints to draw a circle with our effector using the cartesian path.
@@ -108,6 +108,7 @@ We know that the equations of a circle are:
  -  x = a + R cos(angle)
  -  y = b + R sin (angle)
  So we gonna add for each degree of the 360° of a circle a new wpose on the waypoints.
+
  ```python
  for angle in range(0,360):
      wpose.position.z = 0.2
@@ -126,3 +127,12 @@ Then we process our plan and execute it :
   rospy.sleep(1)
   self.group.execute(plan,wait=True)
   ```
+
+  ### Create your own service to complete the last question :)
+
+  #  Important !!
+
+  Don't foget to add planningScene and Marker topic to RVIZ
+
+  optional: uncheck MotionPlanning in order to see the extruder only (no plan path or infinite loop)
+  ![MoveIt](https://github.com/DiAifU/move_exam/raw/master/screenshots/rviz_options.png)
